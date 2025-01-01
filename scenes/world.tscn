@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bgrs68y3x3qxy"]
+[gd_scene load_steps=13 format=4 uid="uid://bgrs68y3x3qxy"]
 
 [ext_resource type="PackedScene" uid="uid://x5pc28uj3hj8" path="res://scenes/player.tscn" id="1_yc1gx"]
 [ext_resource type="Texture2D" uid="uid://cjltjuowo64dd" path="res://art/assets/survivalgame-terrian-defult.png" id="2_ru3f7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cbeqeo6a31t7" path="res://art/assets/survivalgame-trees.png" id="4_ct4rs"]
 [ext_resource type="Texture2D" uid="uid://b7o2y74bo2xxo" path="res://art/assets/survivalgame-terrian-water.png" id="5_7ltig"]
 [ext_resource type="PackedScene" uid="uid://c1iksueyw2f4d" path="res://scenes/apple_tree.tscn" id="6_h3sni"]
+[ext_resource type="Resource" uid="uid://cnfbt4fbcqdmo" path="res://inventory/playerInv.tres" id="6_veof5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hsl8"]
 texture = ExtResource("2_ru3f7")
@@ -284,6 +285,7 @@ tile_map_data = PackedByteArray("AAD7//v/AQALAAAAAAD7//z/AQALAAEAAAD7//3/AQALAAI
 tile_set = SubResource("TileSet_a3h3h")
 
 [node name="player" parent="." instance=ExtResource("1_yc1gx")]
+inv = ExtResource("6_veof5")
 
 [node name="apple_tree" parent="." instance=ExtResource("6_h3sni")]
 position = Vector2(62, -87)
