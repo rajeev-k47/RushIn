@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdc0genwjl20l"]
+
+[ext_resource type="Script" path="res://Chest/chest.gd" id="1_oxafo"]
+[ext_resource type="Texture2D" uid="uid://dontqx3uotuso" path="res://art/assets/survivalgame-randomitems.png" id="1_xcfls"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl6lo"]
+atlas = ExtResource("1_xcfls")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c1jy"]
+atlas = ExtResource("1_xcfls")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyhe3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl6lo")
+}],
+"loop": true,
+"name": &"close",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c1jy")
+}],
+"loop": true,
+"name": &"open",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mt78h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywl5b"]
+size = Vector2(8, 10)
+
+[node name="Chest" type="Node2D"]
+script = ExtResource("1_oxafo")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eyhe3")
+animation = &"close"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mt78h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ywl5b")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
