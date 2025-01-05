@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5mojyutrm5c0"]
+[gd_scene load_steps=7 format=3 uid="uid://b5mojyutrm5c0"]
 
 [ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_ipqhr"]
+[ext_resource type="PackedScene" uid="uid://dgs8x8jk0d8mh" path="res://Menu/options_menu.tscn" id="2_dfjph"]
 
 [sub_resource type="Gradient" id="Gradient_aburp"]
 colors = PackedColorArray(0, 0.658824, 0, 1, 0.486275, 0.580392, 0, 1)
@@ -117,3 +118,7 @@ theme_override_colors/font_color = Color(0.054902, 0.0666667, 0.0862745, 1)
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_85u3n")
 text = "Exit"
+
+[node name="Options_menu" parent="." instance=ExtResource("2_dfjph")]
+visible = false
+layout_mode = 1
