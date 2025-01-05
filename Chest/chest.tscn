@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdc0genwjl20l"]
+[gd_scene load_steps=9 format=3 uid="uid://cdc0genwjl20l"]
 
 [ext_resource type="Script" path="res://Chest/chest.gd" id="1_oxafo"]
 [ext_resource type="Texture2D" uid="uid://dontqx3uotuso" path="res://art/assets/survivalgame-randomitems.png" id="1_xcfls"]
+[ext_resource type="PackedScene" uid="uid://dxcc2ojqm5502" path="res://Chest/chest_inv.tscn" id="2_c2a25"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sl6lo"]
 atlas = ExtResource("1_xcfls")
@@ -54,6 +55,17 @@ shape = SubResource("CircleShape2D_mt78h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ywl5b")
+
+[node name="Chest_inv" parent="." instance=ExtResource("2_c2a25")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -51.0
+offset_top = -76.0
+offset_right = 51.0
+offset_bottom = -12.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
