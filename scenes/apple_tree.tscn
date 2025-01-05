@@ -61,6 +61,7 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
 position = Vector2(0.5, 10.5)
 shape = SubResource("RectangleShape2D_tgfxe")
+debug_color = Color(0.471495, 0.507343, 0.799472, 0.42)
 
 [connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
 [connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
