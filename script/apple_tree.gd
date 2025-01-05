@@ -1,6 +1,6 @@
 extends Node2D
 
-var state = "no_apples"
+var state = "apples"
 var player_area = false 
 
 var apple = preload("res://scenes/apple_collectable.tscn")
@@ -44,7 +44,6 @@ func drop_apple():
 	var apple_instance = apple.instantiate()
 	apple_instance.global_position = $Marker2D.global_position
 	get_parent().add_child(apple_instance)
-	print(player)
 	player.collect(item)
 	
 	await get_tree().create_timer(3).timeout
