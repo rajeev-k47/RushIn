@@ -8,7 +8,7 @@ class_name main_menu
 @onready var options_menu_ins = $Options_menu as options_menu
 @onready var margin_container: MarginContainer = $MarginContainer
 
-@onready var start_scence = preload("res://scenes/world.tscn") as PackedScene
+@onready var start_scence = preload("res://present/present_main.tscn") as PackedScene
 
 func _ready() -> void:
 	start_button.button_down.connect(on_start_pressed)

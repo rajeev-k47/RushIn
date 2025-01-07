@@ -16,10 +16,10 @@ func updateSlots():
 		slots[i].update(inv.slots[i])
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("i"):
-		if is_open:
-			Invclose()
-		else:
+	#if Input.is_action_just_pressed("i"):
+		#if is_open:
+			#Invclose()
+		#else:
 			Invopen()
 
 func Invopen():
