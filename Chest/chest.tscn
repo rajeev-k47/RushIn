@@ -34,7 +34,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_mt78h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywl5b"]
-size = Vector2(8, 10)
+size = Vector2(8, 8)
 
 [node name="Chest" type="Node2D"]
 script = ExtResource("1_oxafo")
@@ -42,18 +42,23 @@ script = ExtResource("1_oxafo")
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_eyhe3")
 animation = &"close"
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_mt78h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 1)
+position = Vector2(0, 0.666667)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_ywl5b")
 
 [node name="Chest_inv" parent="." instance=ExtResource("2_c2a25")]
